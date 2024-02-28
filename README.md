@@ -1,8 +1,3 @@
-Kirn Kim - squrkidev@gmail.com (github handle: squrki)
-Brandon Landry:
-email - sirjava@gmail.com
-github - hotpocket
-
 # W2D2-Assignment-FS-S24-Fullstack-JS-with-Node.JS-and-Express
 
 # Assignment: Building a RESTful API with Node.js and Express
