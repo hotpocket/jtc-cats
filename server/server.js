@@ -1,9 +1,12 @@
 const dotenv = require("dotenv").config();
+const cors = require("cors");
 const express = require("express");
 const fs = require("fs");
 const https = require("https");
 
 const app = express();
+
+app.use(cors());
 
 app.use((req, res, next) => {
   console.log(`Request path: ${req.path}`);
@@ -34,7 +37,7 @@ app.get("/create/:q", (req, res) => {
       // `${id}.json`
       //save data to file to the "cats" dir
       fs.writeFileSync(`./cats/${id}.json`, data);
-      res.send(JSON.parse(data));
+      res.status(201).send(data);
     });
   });
 
@@ -44,25 +47,5 @@ app.get("/create/:q", (req, res) => {
 
   apiRequest.end();
 });
-
-// const express = require("express");
-
-// const app = express();
-
-// //middlewares
-
-// //routes
-
-// app.get("/api", (req, res) => {
-//   res.send("Hello World");
-// });
-
-// app.get("*", (req, res) => {
-//   res.send("404");
-// });
-
-// app.listen(3001, () => {
-//   console.log("listening on 3001");
-// });
 
 app.listen(3001, () => console.log("Server is running"));
